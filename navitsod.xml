@@ -8,56 +8,56 @@
 <!-- Change route status images depending on route_status -->
 	<osd name="routestat" update_period="2" type="cmd_interface" h="1" w="1" x="-1" y="-1" osd_configuration="4" command='
 	osd[@name=="show_route_status"].src =
-	route.route_status==1 ? "/sdcard/navit/osd_graphics/route_status_dest_89_40.png" : 
+	route.route_status==1 ? "osd_graphics/route_status_dest_89_40.png" : 
 	(route.route_status==0 ? "" :  
-	(route.route_status==3 ? "/sdcard/navit/osd_graphics/route_status_no_89_40.png" : 
-	(route.route_status==5 ? "/sdcard/navit/osd_graphics/route_status_path_89_40.png" : 
-	(route.route_status==13 ? "/sdcard/navit/osd_graphics/route_status_graph_89_40.png" : 
-	(route.route_status==17 ? "/sdcard/navit/osd_graphics/route_status_done_89_40.png" : 
-	(route.route_status==33 ? "/sdcard/navit/osd_graphics/route_status_done_89_40.png" : "/sdcard/navit/osd_graphics/route_status_no_89_40.png"
+	(route.route_status==3 ? "osd_graphics/route_status_no_89_40.png" : 
+	(route.route_status==5 ? "osd_graphics/route_status_path_89_40.png" : 
+	(route.route_status==13 ? "osd_graphics/route_status_graph_89_40.png" : 
+	(route.route_status==17 ? "osd_graphics/route_status_done_89_40.png" : 
+	(route.route_status==33 ? "osd_graphics/route_status_done_89_40.png" : "osd_graphics/route_status_no_89_40.png"
 	))))))
 	' />
 
 <!-- Change position accuracy images depending on position_radius -->
 	<osd name="accuracy" enabled="yes" update_period="5" type="cmd_interface" h="1" w="1" x="-1" y="-1" osd_configuration="1" command='
 	osd[@name=="position_accuracy"].src =
-	vehicle.position_radius==0 ? "/sdcard/navit/osd_graphics/gps_accuracy_1_80_40.png" :
-	(vehicle.position_radius<=2 ? "/sdcard/navit/osd_graphics/gps_accuracy_9_80_40.png" :
-	(vehicle.position_radius<=5 ? "/sdcard/navit/osd_graphics/gps_accuracy_8_80_40.png" :
-	(vehicle.position_radius<=10 ? "/sdcard/navit/osd_graphics/gps_accuracy_7_80_40.png" :
-	(vehicle.position_radius<=15 ? "/sdcard/navit/osd_graphics/gps_accuracy_6_80_40.png" :
-	(vehicle.position_radius<=20 ? "/sdcard/navit/osd_graphics/gps_accuracy_5_80_40.png" :
-	(vehicle.position_radius<=30 ? "/sdcard/navit/osd_graphics/gps_accuracy_4_80_40.png" :
-	(vehicle.position_radius<=50 ? "/sdcard/navit/osd_graphics/gps_accuracy_3_80_40.png" :
-	(vehicle.position_radius<=100 ? "/sdcard/navit/osd_graphics/gps_accuracy_2_80_40.png" : "/sdcard/navit/osd_graphics/gps_accuracy_1_80_40.png"
+	vehicle.position_radius==0 ? "osd_graphics/gps_accuracy_1_80_40.png" :
+	(vehicle.position_radius<=2 ? "osd_graphics/gps_accuracy_9_80_40.png" :
+	(vehicle.position_radius<=5 ? "osd_graphics/gps_accuracy_8_80_40.png" :
+	(vehicle.position_radius<=10 ? "osd_graphics/gps_accuracy_7_80_40.png" :
+	(vehicle.position_radius<=15 ? "osd_graphics/gps_accuracy_6_80_40.png" :
+	(vehicle.position_radius<=20 ? "osd_graphics/gps_accuracy_5_80_40.png" :
+	(vehicle.position_radius<=30 ? "osd_graphics/gps_accuracy_4_80_40.png" :
+	(vehicle.position_radius<=50 ? "osd_graphics/gps_accuracy_3_80_40.png" :
+	(vehicle.position_radius<=100 ? "osd_graphics/gps_accuracy_2_80_40.png" : "osd_graphics/gps_accuracy_1_80_40.png"
 	))))))))
 	' />
 
 <!-- OSD Elements -->
 
 <!-- Buttons -->
-	<osd type="button" src="/sdcard/navit/osd_graphics/zoom_in_64_64.png" command="zoom_in()" x="1" y="95" osd_configuration="1"/>
-	<osd type="button" src="/sdcard/navit/osd_graphics/zoom_out_64_64.png" command="zoom_out()" x="-66" y="95" osd_configuration="1"/>
-	<osd type="button" src="/sdcard/navit/osd_graphics/back_start_64_64.png" command="follow=0;set_center_cursor()" x="1" y="165" enable_expression="follow&gt;1" osd_configuration="1"/>
-	<osd type="button" src="/sdcard/navit/osd_graphics/abort_64_64.png" command="gui.abort_navigation()" x="-66" y="165" osd_configuration="4"/>
+	<osd type="button" src="osd_graphics/zoom_in_64_64.png" command="zoom_in()" x="1" y="95" osd_configuration="1"/>
+	<osd type="button" src="osd_graphics/zoom_out_64_64.png" command="zoom_out()" x="-66" y="95" osd_configuration="1"/>
+	<osd type="button" src="osd_graphics/back_start_64_64.png" command="follow=0;set_center_cursor()" x="1" y="165" enable_expression="follow&gt;1" osd_configuration="1"/>
+	<osd type="button" src="osd_graphics/abort_64_64.png" command="gui.abort_navigation()" x="-66" y="165" osd_configuration="4"/>
 
 <!-- head -->
 	<osd type="text" label="${tracking.item.street_name} ${tracking.item.street_name_systematic}" x="0" y="0" w="854" h="40" font_size="400" text_color="#ffffffff" background_color="#00000000" align="4" osd_configuration="6"/>
-	<osd type="button" command="" src="/sdcard/navit/osd_graphics/upper_854_45.png" x="0" y="0" w="854" h="45" osd_configuration="1"/>
+	<osd type="button" command="" src="osd_graphics/upper_854_45.png" x="0" y="0" w="854" h="45" osd_configuration="1"/>
 
 <!-- head left -->
-	<osd name="position_accuracy" type="button" command="" src="/sdcard/navit/osd_graphics/gps_accuracy_1_80_40.png" x="0" y="45" w="80" h="40" osd_configuration="1"/>
-	<osd name="show_route_status" command="" enabled="yes" type="button" x="71" y="45" w="89" h="40" src="/sdcard/navit/osd_graphics/route_status_dest_89_40.png" osd_configuration="4"/>
+	<osd name="position_accuracy" type="button" command="" src="osd_graphics/gps_accuracy_1_80_40.png" x="0" y="45" w="80" h="40" osd_configuration="1"/>
+	<osd name="show_route_status" command="" enabled="yes" type="button" x="71" y="45" w="89" h="40" src="osd_graphics/route_status_dest_89_40.png" osd_configuration="4"/>
 
 <!-- head right -->
 	<osd type="text" label="${navigation.item.destination_length[named]}" x="-120" y="0" w="120" h="40" font_size="400" align="0" background_color="#00000000" osd_configuration="4"/>
 	<osd type="text" label="H:${vehicle.position_height}m " x="-120" y="0" w="120" h="40" font_size="375" align="8" text_color="#ffffffff" background_color="#00000000" osd_configuration="2"/>
 	<osd type="text" label="${navigation.item.destination_time[arrival]} / ${navigation.item.destination_time[remaining]}" x="-170" y="45" w="180" h="40" align="4" font_size="400" background_color="#00000000" osd_configuration="4"/>
-	<osd type="button" command="follow=80000;zoom_to_route();" src="/sdcard/navit/osd_graphics/upper_right_190_45.png" x="-190" y="45" w="190" h="45" osd_configuration="4" />
+	<osd type="button" command="follow=80000;zoom_to_route();" src="osd_graphics/upper_right_190_45.png" x="-190" y="45" w="190" h="45" osd_configuration="4" />
 
 <!-- foot -->
 	<osd type="text" label="auf ${navigation.item[1].street_name} ${navigation.item[1].street_name_systematic}" x="128" y="-40" w="726" h="40" font_size="400" align="4" background_color="#00000000" osd_configuration="4"/>
-	<osd type="button" command="" src="/sdcard/navit/osd_graphics/lower_route_854_140.png" x="0" y="-140" w="854" h="140" osd_configuration="4" />
+	<osd type="button" command="" src="osd_graphics/lower_route_854_140.png" x="0" y="-140" w="854" h="140" osd_configuration="4" />
 
 <!-- foot left -->
 	<osd type="navigation_next_turn" x="0" y="-135" w="128" h="90" icon_src="%s_wh_64_64.png" background_color="#00000000" osd_configuration="4"/>
@@ -67,7 +67,7 @@
 	<osd type="text" label="${vehicle.position_speed[value]}" x="-160" y="-105" w="90" h="60" font_size="600" background_color="#00000000" osd_configuration="1"/>
 	<osd type="text" label="${tracking.item.route_speed[value]}" x="-70" y="-105" w="70" h="60" font_size="500" background_color="#00000000" osd_configuration="1"/>
 	<osd type="speed_warner" x="-69" y="-105" w="70"  h="60" font_size="500" text_color="#FF000000" background_color="#00000000" osd_configuration="1"/>
-	<osd type="button" command="" src="/sdcard/navit/osd_graphics/lower_right_190_65.png" x="-190" y="-108" w="190" h="65" osd_configuration="2"/> 
-	<osd type="button" command="" src="/sdcard/navit/osd_graphics/lower_right_route_190_65.png" x="-190" y="-110" w="190" h="65" osd_configuration="4" />
+	<osd type="button" command="" src="osd_graphics/lower_right_190_65.png" x="-190" y="-108" w="190" h="65" osd_configuration="2"/> 
+	<osd type="button" command="" src="osd_graphics/lower_right_route_190_65.png" x="-190" y="-110" w="190" h="65" osd_configuration="4" />
 
 </xml>
