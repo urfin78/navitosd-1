@@ -1,4 +1,4 @@
 navitosd-1
 ==========
 
-First Navit OSD from me
+my first try of a navit OSD Layout
